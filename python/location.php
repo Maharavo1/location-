@@ -54,3 +54,10 @@ class LocationService:
                 raise Exception(f"Le bien '{nom}' n'existe pas.")
         return bien
 
+
+def executer(action):
+    try:
+        action()
+    except Exception as e:
+        print(e)
+
