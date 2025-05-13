@@ -84,5 +84,11 @@ class LocationService {
         return $this->biens[$nom];
     }
 }
-
+function executer(callable $action) {
+    try {
+        $action();
+    } catch (Exception $e) {
+        echo $e->getMessage() . "\n";
+    }
+}
 ?>
