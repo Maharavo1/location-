@@ -61,3 +61,33 @@ def executer(action):
     except Exception as e:
         print(e)
 
+
+# Test
+biens = [
+    Bien("Maison_Tana", "maison"),
+    Bien("Toyota123", "voiture"),
+    Bien("YamahaX", "moto")
+]
+
+service = LocationService(biens)
+
+service.afficher_tous_les_biens()
+executer(lambda: service.reserver_bien("Maison_Tana"))
+executer(lambda: service.reserver_bien("Toyota123"))
+executer(lambda: service.reserver_bien("YamahaX"))
+
+executer(lambda: service.reserver_bien("Maison_Tana"))
+executer(lambda: service.reserver_bien("Toyota123"))
+executer(lambda: service.reserver_bien("YamahaX"))
+
+executer(lambda: service.annuler_reservation("Maison_Tana"))
+executer(lambda: service.annuler_reservation("Toyota123"))
+executer(lambda: service.annuler_reservation("YamahaX"))
+
+executer(lambda: service.annuler_reservation("Iconnu"))
+executer(lambda: service.annuler_reservation("Daba"))
+executer(lambda: service.annuler_reservation("Vaika"))
+
+
+service.afficher_tous_les_biens()
+service.afficher_biens_disponibles()
