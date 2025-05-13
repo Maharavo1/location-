@@ -3,7 +3,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-    List<Bien> biensConnus = List.of(
+        List<Bien> biensConnus = List.of(
                 new Bien("Maison_Tana", "maison"),
                 new Bien("Toyota123", "voiture"),
                 new Bien("YamahaX", "moto")
@@ -42,5 +42,5 @@ public class Main {
             System.err.println(e.getMessage());
         }
     }
-       
+
 }
