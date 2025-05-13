@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 public class LocationService {
@@ -11,9 +10,9 @@ public class LocationService {
         }
     }
 
-    public void reserverBien(String nom) {
+    public void reserverBien(String nom, int dureeJours) {
         Bien bien = getBien(nom, false);
-        bien.reserver();
+        bien.reserver(dureeJours);
     }
 
     public void annulerReservation(String nom) {

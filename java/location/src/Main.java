@@ -13,23 +13,18 @@ public class Main {
 
         service.afficherTousLesBiens();
 
-        executer(() -> service.reserverBien("Maison_Tana"));
-        executer(() -> service.reserverBien("Toyota123"));
-        executer(() -> service.reserverBien("YamahaX"));
+        executer(() -> service.reserverBien("Maison_Tana", 2));
+        executer(() -> service.reserverBien("Toyota123", 1));
+        executer(() -> service.reserverBien("YamahaX", 3));
 
-        executer(() -> service.reserverBien("Maison_Tana"));
-        executer(() -> service.reserverBien("Toyota123"));
-        executer(() -> service.reserverBien("YamahaX"));
-
-
-        executer(() -> service.annulerReservation("Maison_Tana"));
+        executer(() -> service.reserverBien("Maison_Tana", 1));
         executer(() -> service.annulerReservation("Toyota123"));
         executer(() -> service.annulerReservation("YamahaX"));
+        executer(() -> service.annulerReservation("Maison_Tana"));
 
-
-        executer(() -> service.reserverBien("inconnu"));
-        executer(() -> service.reserverBien("motors"));
-        executer(() -> service.reserverBien("trano"));
+        executer(() -> service.reserverBien("inconnu", 2));
+        executer(() -> service.reserverBien("motors", 1));
+        executer(() -> service.reserverBien("trano", 1));
 
         service.afficherTousLesBiens();
         service.afficherBiensDisponibles();
@@ -42,5 +37,4 @@ public class Main {
             System.err.println(e.getMessage());
         }
     }
-
 }
