@@ -99,3 +99,7 @@ executer(() => service.annulerReservation("YamahaX"));
 executer(() => service.annulerReservation("Inconnu"));
 executer(() => service.annulerReservation("Daba"));
 executer(() => service.annulerReservation("Vaika"));
+
+
+service.afficherTousLesBiens();
+service.afficherBiensDisponibles();
