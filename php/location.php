@@ -91,4 +91,34 @@ function executer(callable $action) {
         echo $e->getMessage() . "\n";
     }
 }
+
+// Test
+$biens = [
+    new Bien("Maison_Tana", "maison"),
+    new Bien("Toyota123", "voiture"),
+    new Bien("YamahaX", "moto"),
+];
+
+$service = new LocationService($biens);
+
+$service->afficherTousLesBiens();
+executer(fn() => $service->reserverBien("Maison_Tana"));
+executer(fn() => $service->reserverBien("Toyota123"));
+executer(fn() => $service->reserverBien("YamahaX"));
+
+executer(fn() => $service->reserverBien("Maison_Tana"));
+executer(fn() => $service->reserverBien("Toyota123"));
+executer(fn() => $service->reserverBien("YamahaX"));
+
+executer(fn() => $service->annulerReservation("Maison_Tana"));
+executer(fn() => $service->annulerReservation("Toyota123"));
+executer(fn() => $service->annulerReservation("YamahaX"));
+
+executer(fn() => $service->annulerReservation("Inconnu"));
+executer(fn() => $service->annulerReservation("Daba"));
+executer(fn() => $service->annulerReservation("Vaika"));
+
+$service->afficherTousLesBiens();
+$service->afficherBiensDisponibles();
+
 ?>
